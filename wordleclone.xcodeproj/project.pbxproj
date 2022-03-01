@@ -20,6 +20,7 @@
 		BFC00B1D27CDFF20007619BC /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B1C27CDFF20007619BC /* LetterButtonView.swift */; };
 		BFC00B1F27CE0155007619BC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B1E27CE0155007619BC /* Keyboard.swift */; };
 		BFC00B2227CE325E007619BC /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2127CE325E007619BC /* Shake.swift */; };
+		BFC00B2427CE5353007619BC /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2327CE5353007619BC /* FlipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BFC00B1C27CDFF20007619BC /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		BFC00B1E27CE0155007619BC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BFC00B2127CE325E007619BC /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		BFC00B2327CE5353007619BC /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC00B2127CE325E007619BC /* Shake.swift */,
+				BFC00B2327CE5353007619BC /* FlipView.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC00B1D27CDFF20007619BC /* LetterButtonView.swift in Sources */,
+				BFC00B2427CE5353007619BC /* FlipView.swift in Sources */,
 				BFC00B0127CDE3FD007619BC /* GameView.swift in Sources */,
 				BFC00B1627CDF168007619BC /* GuessView.swift in Sources */,
 				BFC00B1F27CE0155007619BC /* Keyboard.swift in Sources */,

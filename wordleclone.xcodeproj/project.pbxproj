@@ -24,6 +24,9 @@
 		BFC00B2627CE6414007619BC /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2527CE6414007619BC /* ToastView.swift */; };
 		BFC00B2827CE6AB9007619BC /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2727CE6AB9007619BC /* Statistic.swift */; };
 		BFC00B2A27CE736A007619BC /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2927CE736A007619BC /* StatsView.swift */; };
+		BFC00B2C27CE7C33007619BC /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2B27CE7C33007619BC /* UIWindow+Extension.swift */; };
+		BFC00B2E27CE8CF4007619BC /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2D27CE8CF3007619BC /* ColorSchemeManager.swift */; };
+		BFC00B3027CE8DD4007619BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2F27CE8DD4007619BC /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		BFC00B2527CE6414007619BC /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		BFC00B2727CE6AB9007619BC /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		BFC00B2927CE736A007619BC /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		BFC00B2B27CE7C33007619BC /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		BFC00B2D27CE8CF3007619BC /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
+		BFC00B2F27CE8DD4007619BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC00B0F27CDEE91007619BC /* Color+Extensions.swift */,
+				BFC00B2B27CE7C33007619BC /* UIWindow+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 				BFC00B1E27CE0155007619BC /* Keyboard.swift */,
 				BFC00B2527CE6414007619BC /* ToastView.swift */,
 				BFC00B2927CE736A007619BC /* StatsView.swift */,
+				BFC00B2F27CE8DD4007619BC /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC00B1827CDF3D0007619BC /* WordleDataModel.swift */,
+				BFC00B2D27CE8CF3007619BC /* ColorSchemeManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -219,8 +228,10 @@
 			files = (
 				BFC00B1D27CDFF20007619BC /* LetterButtonView.swift in Sources */,
 				BFC00B2427CE5353007619BC /* FlipView.swift in Sources */,
+				BFC00B2E27CE8CF4007619BC /* ColorSchemeManager.swift in Sources */,
 				BFC00B0127CDE3FD007619BC /* GameView.swift in Sources */,
 				BFC00B1627CDF168007619BC /* GuessView.swift in Sources */,
+				BFC00B3027CE8DD4007619BC /* SettingsView.swift in Sources */,
 				BFC00B2627CE6414007619BC /* ToastView.swift in Sources */,
 				BFC00B1F27CE0155007619BC /* Keyboard.swift in Sources */,
 				BFC00B1327CDF00E007619BC /* Guess.swift in Sources */,
@@ -228,6 +239,7 @@
 				BFC00B2227CE325E007619BC /* Shake.swift in Sources */,
 				BFC00B1927CDF3D0007619BC /* WordleDataModel.swift in Sources */,
 				BFC00B1027CDEE91007619BC /* Color+Extensions.swift in Sources */,
+				BFC00B2C27CE7C33007619BC /* UIWindow+Extension.swift in Sources */,
 				BFC00B1B27CDF558007619BC /* Global.swift in Sources */,
 				BFC00B2A27CE736A007619BC /* StatsView.swift in Sources */,
 				BFC00B2827CE6AB9007619BC /* Statistic.swift in Sources */,

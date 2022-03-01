@@ -51,8 +51,8 @@ struct StatsView: View {
                                 .fill(Color.wrong)
                                 .frame(width: 22, height: 20)
                                 .overlay(
-                                 Text("0")
-                                    .foregroundColor(.white)
+                                    Text("0")
+                                        .foregroundColor(.white)
                                 )
                         } else {
                             if let maxValue = dm.currentStat.frequencies.max() {
@@ -61,8 +61,8 @@ struct StatsView: View {
                                           ? Color.correct
                                           : Color.wrong)
                                     .frame(width: CGFloat(dm.currentStat.frequencies[index])
-                                    / CGFloat(maxValue) * 210,
-                                    height: 20)
+                                           / CGFloat(maxValue) * 210,
+                                           height: 20)
                                     .overlay(
                                         Text("\(dm.currentStat.frequencies[index])")
                                             .foregroundColor(.white)
@@ -72,6 +72,22 @@ struct StatsView: View {
                             }
                         }
                         Spacer()
+                    }
+                }
+                if dm.gameOver {
+                    HStack {
+                        Spacer()
+                        Button {
+                            dm.shareResult()
+                        } label: {
+                            HStack {
+                                Image(systemName: "square.and.arrow.up")
+                                Text("Share")
+                            }
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.correct)
+                        }
                     }
                 }
             }

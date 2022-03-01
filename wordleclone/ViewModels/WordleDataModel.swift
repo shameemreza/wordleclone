@@ -8,8 +8,8 @@
 import SwiftUI
 
 class WordleDataModel: ObservableObject {
-    @Published var guessess: [Guess] = []
-    @Published var incorrectAttemps = [Int](repeating: 0, count: 6)
+    @Published var guesses: [Guess] = []
+    @Published var incorrectAttempts = [Int](repeating: 0, count: 6)
     @Published var toastText: String?
     @Published var showStats = false
     
@@ -48,9 +48,9 @@ class WordleDataModel: ObservableObject {
     }
     
     func populateDefaults() {
-        guessess = []
+        guesses = []
         for index in 0...5 {
-            guessess.append(Guess(index: index))
+            guesses.append(Guess(index: index))
         }
         //reset keyboard colors
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -89,10 +89,10 @@ class WordleDataModel: ObservableObject {
                 }
             } else {
                 withAnimation {
-                    self.incorrectAttemps[tryIndex] += 1
+                    self.incorrectAttempts[tryIndex] += 1
                 }
                 showToast(with: "Not in Word List")
-                incorrectAttemps[tryIndex] = 0
+                incorrectAttempts[tryIndex] = 0
             }
         }
     }
@@ -104,7 +104,7 @@ class WordleDataModel: ObservableObject {
     
     func updateRow() {
         let guessWord = currentWord.padding(toLength: 5, withPad: " ", startingAt: 0)
-        guessess[tryIndex].word = guessWord
+        guesses[tryIndex].word = guessWord
     }
     
     func verifyWord() -> Bool {
@@ -119,9 +119,9 @@ class WordleDataModel: ObservableObject {
         }
         for index in 0...4 {
             let correctLetter = correctLetters[index]
-            let guessLetter = guessess[tryIndex].guessLetters[index]
+            let guessLetter = guesses[tryIndex].guessLetters[index]
             if guessLetter == correctLetter {
-                guessess[tryIndex].bgColors[index] = .correct
+                guesses[tryIndex].bgColors[index] = .correct
                 if !matchedLetters.contains(guessLetter) {
                     matchedLetters.append(guessLetter)
                     keyColors[guessLetter] = .correct
@@ -136,11 +136,11 @@ class WordleDataModel: ObservableObject {
         }
         
         for index in 0...4 {
-            let guessLetter = guessess[tryIndex].guessLetters[index]
+            let guessLetter = guesses[tryIndex].guessLetters[index]
             if correctLetters.contains(guessLetter)
-                && guessess[tryIndex].bgColors[index] != .correct
+                && guesses[tryIndex].bgColors[index] != .correct
                 && frequency[guessLetter]! > 0 {
-                guessess[tryIndex].bgColors[index] = .misplaced
+                guesses[tryIndex].bgColors[index] = .misplaced
                 if !misplacedLetters.contains(guessLetter) && matchedLetters.contains(guessLetter) {
                     misplacedLetters.append(guessLetter)
                     keyColors[guessLetter] = .misplaced
@@ -150,7 +150,7 @@ class WordleDataModel: ObservableObject {
         }
         
         for index in 0...4 {
-            let guessLetter = guessess[tryIndex].guessLetters[index]
+            let guessLetter = guesses[tryIndex].guessLetters[index]
             if keyColors[guessLetter] != .correct && keyColors[guessLetter] != .misplaced {
                 keyColors[guessLetter] = .wrong
             }
@@ -162,7 +162,7 @@ class WordleDataModel: ObservableObject {
     func flipCards(for row: Int) {
         for col in 0...4 {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(col) * 0.2) {
-                self.guessess[row].cardFlipped[col].toggle()
+                self.guesses[row].cardFlipped[col].toggle()
             }
         }
     }
@@ -180,4 +180,28 @@ class WordleDataModel: ObservableObject {
             }
         }
     }
+    
+    func shareResult() {
+            let stat = Statistic.loadStat()
+            let resultString = """
+    Wordle \(stat.games) \(tryIndex < 6 ? "\(tryIndex + 1)/6" : "")
+    \(guesses.compactMap{$0.results}.joined(separator: "\n"))
+    """
+            print(resultString)
+            let activityController = UIActivityViewController(activityItems: [resultString], applicationActivities: nil)
+            switch UIDevice.current.userInterfaceIdiom {
+            case .phone:
+                UIWindow.key?.rootViewController!
+                    .present(activityController, animated: true)
+            case .pad:
+                activityController.popoverPresentationController?.sourceView = UIWindow.key
+                activityController.popoverPresentationController?.sourceRect = CGRect(x: Global.screenWidth / 2,
+                                                                                      y: Global.screenHeight / 2,
+                                                                                      width: 200,
+                                                                                      height: 200)
+                UIWindow.key?.rootViewController!.present(activityController, animated: true)
+            default:
+                break
+            }
+        }
 }

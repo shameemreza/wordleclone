@@ -11,15 +11,23 @@ struct GameView: View {
     @EnvironmentObject var dm: WordleDataModel
     var body: some View {
         NavigationView {
-            VStack(spacing: 3) {
-                GuessView(guess: $dm.guessess[0])
-                GuessView(guess: $dm.guessess[1])
-                GuessView(guess: $dm.guessess[2])
-                GuessView(guess: $dm.guessess[3])
-                GuessView(guess: $dm.guessess[4])
-                GuessView(guess: $dm.guessess[5])
+            VStack {
+                Spacer()
+                VStack(spacing: 3) {
+                    GuessView(guess: $dm.guessess[0])
+                    GuessView(guess: $dm.guessess[1])
+                    GuessView(guess: $dm.guessess[2])
+                    GuessView(guess: $dm.guessess[3])
+                    GuessView(guess: $dm.guessess[4])
+                    GuessView(guess: $dm.guessess[5])
+                }
+                .frame(width: Global.boardWidth, height: 6 * Global.boardWidth / 5)
+                Spacer()
+                Keyboard()
+                    .scaleEffect(Global.keyboardScale)
+                    .padding(.top)
+                Spacer()
             }
-            .frame(width: Global.boardWidth, height: 6 * Global.boardWidth / 5)
                 .padding()
                 .navigationViewStyle(.stack)
                 .toolbar {

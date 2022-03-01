@@ -12,9 +12,9 @@ Wordle clone using Swift and SwiftUI for educational purposes.
 
 ## Screenshots
 
-<img height="800px" src="row/preview-1.png"><br>
-<img height="800px" src="row/preview-2.png"><br>
-<img height="800px" src="row/preview-3.png">
+<img src="row/preview-1.png">
+<img src="row/preview-2.png">
+<img src="row/preview-3.png">
 
 ##Features
 

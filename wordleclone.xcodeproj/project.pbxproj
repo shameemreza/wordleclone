@@ -19,6 +19,7 @@
 		BFC00B1B27CDF558007619BC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B1A27CDF558007619BC /* Global.swift */; };
 		BFC00B1D27CDFF20007619BC /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B1C27CDFF20007619BC /* LetterButtonView.swift */; };
 		BFC00B1F27CE0155007619BC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B1E27CE0155007619BC /* Keyboard.swift */; };
+		BFC00B2227CE325E007619BC /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2127CE325E007619BC /* Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		BFC00B1A27CDF558007619BC /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		BFC00B1C27CDFF20007619BC /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		BFC00B1E27CE0155007619BC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		BFC00B2127CE325E007619BC /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,6 @@
 		BFC00AF227CDE3FD007619BC = {
 			isa = PBXGroup;
 			children = (
-				BFC00AFE27CDE3FD007619BC /* wordlecloneApp.swift */,
 				BFC00AFD27CDE3FD007619BC /* wordleclone */,
 				BFC00AFC27CDE3FD007619BC /* Products */,
 			);
@@ -68,10 +69,12 @@
 		BFC00AFD27CDE3FD007619BC /* wordleclone */ = {
 			isa = PBXGroup;
 			children = (
+				BFC00AFE27CDE3FD007619BC /* wordlecloneApp.swift */,
 				BFC00B1727CDF3B2007619BC /* ViewModels */,
 				BFC00B1127CDEFDD007619BC /* Models */,
 				BFC00B1427CDF12C007619BC /* Views */,
 				BFC00B0E27CDEE63007619BC /* Extensions */,
+				BFC00B2027CE322D007619BC /* Animations */,
 				BFC00B0227CDE3FF007619BC /* Assets.xcassets */,
 				BFC00B0C27CDE6F2007619BC /* Launch Screen.storyboard */,
 				BFC00B0427CDE3FF007619BC /* Preview Content */,
@@ -121,6 +124,14 @@
 				BFC00B1827CDF3D0007619BC /* WordleDataModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFC00B2027CE322D007619BC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				BFC00B2127CE325E007619BC /* Shake.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				BFC00B1F27CE0155007619BC /* Keyboard.swift in Sources */,
 				BFC00B1327CDF00E007619BC /* Guess.swift in Sources */,
 				BFC00AFF27CDE3FD007619BC /* wordlecloneApp.swift in Sources */,
+				BFC00B2227CE325E007619BC /* Shake.swift in Sources */,
 				BFC00B1927CDF3D0007619BC /* WordleDataModel.swift in Sources */,
 				BFC00B1027CDEE91007619BC /* Color+Extensions.swift in Sources */,
 				BFC00B1B27CDF558007619BC /* Global.swift in Sources */,

@@ -14,12 +14,10 @@ struct GameView: View {
             VStack {
                 Spacer()
                 VStack(spacing: 3) {
-                    GuessView(guess: $dm.guessess[0])
-                    GuessView(guess: $dm.guessess[1])
-                    GuessView(guess: $dm.guessess[2])
-                    GuessView(guess: $dm.guessess[3])
-                    GuessView(guess: $dm.guessess[4])
-                    GuessView(guess: $dm.guessess[5])
+                    ForEach(0...5, id: \.self) {index in
+                        GuessView(guess: $dm.guessess[index])
+                            .modifier(Shake(animatableData: CGFloat(dm.incorrectAttemps[index])))
+                    }
                 }
                 .frame(width: Global.boardWidth, height: 6 * Global.boardWidth / 5)
                 Spacer()

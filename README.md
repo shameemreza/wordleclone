@@ -16,7 +16,7 @@ Wordle clone using Swift and SwiftUI for educational purposes.
 <img src="row/preview-2.png">
 <img src="row/preview-3.png">
 
-##Features
+## Features
 
 * Hard Mode
 * Help Screen
